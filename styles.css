@@ -7,6 +7,7 @@
 body {
   background: #24272e;
 }
+
 header {
   background: white;
   padding: 20px;
@@ -17,6 +18,21 @@ header > h1 {
   text-align: center;
   font-family: Asap, sans-serif;
 }
+/* 
+main {
+  position: relative;
+}
+ */
+ /* 
+aside {
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  background-color: gray;
+  width: 200px;
+  height: 100vh;
+}
+ */
 
 .score-board {
   margin: 20px auto;
@@ -56,6 +72,7 @@ header > h1 {
 .result {
   font-size: 40px;
   color: white;
+  margin-top: 50px;
 }
 
 .result > p {
@@ -65,7 +82,7 @@ header > h1 {
 }
 
 .choices {
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -90,4 +107,49 @@ header > h1 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 20px;
+}
+
+#summary {
+  width: 80%;
+  max-width: 400px;
+  height: 300px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  /* top: 35%; */
+  margin-top: 250px;
+  transform: translate(-50%, -50%);
+  border: 5px solid #e2584d;
+  border-radius: 6px;
+  padding: 20px;
+
+  background-color: white;
+  color: #24272e;
+  text-align: center;
+  font-family: Asap, sans-serif;
+  font-size: 1.5rem;
+  /* margin-top: 20px; */
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#summary-message {
+  margin-top: 20px;
+  color: #24272e;
+  text-align: center;
+  font-family: Asap, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+#reset {
+  background-color: #e2584d;
+  color: white;
+  border: none; /* 5px solid #24272e; */
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 10px;
+  font-family: Asap, sans-serif;
+  font-size: 1.2rem;
 }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script defer="defer" src="app.js"></script>
     <title>Rock, Paper, Scissors, Lizard, Spock</title>
 </head>
 
@@ -14,31 +15,49 @@
         <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
     </header>
     <main>
+
+        <div id="summary" class="hidden">
+            <h2>End of Game</h2>
+            <p id="summary-message"></p>
+            <button id="reset" type="reset">Play again</button>
+        </div>
+
         <div class="score-board">
             <div id="user-label" class="badge">user</div>
             <div id="computer-label" class="badge">comp</div>
-            <span id="user-score">0</span>:<span id="computer-score">0</span>
+            <span id="user-score">0</span> : <span id="computer-score">0</span>
         </div>
 
         <div class="result">
-            <p>Paper covers Rock. You win!</p>
+            <p></p>
         </div>
 
         <div class="choices">
             <div class="choice" id="rock">
-                <img src="/img/rock.png" alt="rock">
+                <img src="./img/rock.png" alt="rock">
             </div>
             <div class="choice" id="paper">
-                <img src="/img/paper.png" alt="paper">
+                <img src="./img/paper.png" alt="paper">
             </div>
             <div class="choice" id="scissors">
-                <img src="/img/scissors.png" alt="scissors">
+                <img src="./img/scissors.png" alt="scissors">
             </div>
         </div>
 
         <p id="action-message">Make your move.</p>
+
+        <video width="400" controls>
+            <source src="./mov/sheldon.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+
+        <!-- <aside>
+            <p>This is aside</p>
+        </aside> -->
     </main>
-    <script src="app.js"></script>
+
+
+
 </body>
 
 </html>
