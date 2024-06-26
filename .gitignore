@@ -2,5 +2,6 @@
 # *.log
 
 # ignore ALL files in ANY directory named temp
+# temp/
 rest/
-mov/sheldon_7ZILrkGI.mp4
+mov/

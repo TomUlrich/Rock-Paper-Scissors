@@ -18,24 +18,10 @@ header > h1 {
   text-align: center;
   font-family: Asap, sans-serif;
 }
-/* 
-main {
-  position: relative;
-}
- */
- /* 
-aside {
-  padding-left: 15px;
-  margin-left: 15px;
-  float: right;
-  background-color: gray;
-  width: 200px;
-  height: 100vh;
-}
- */
 
 .score-board {
-  margin: 20px auto;
+  position: relative;
+  margin: 80px auto;
   border: 3px solid white;
   border-radius: 4px;
   text-align: center;
@@ -44,7 +30,6 @@ aside {
   font-size: 46px;
   padding: 15px 20px;
   font-family: Asap, sans-serif;
-  position: relative;
 }
 
 .badge {
@@ -97,7 +82,11 @@ aside {
 
 .choice:hover {
   cursor: pointer;
-  background: #635453;
+  background: hsl(124, 15%, 59%);
+}
+
+.selected{
+  border-color: rgb(59, 160, 92);
 }
 
 #action-message {

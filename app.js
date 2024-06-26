@@ -1,6 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
-const scoreToWin = 1;
+const scoreToWin = 3;
 
 const main = document.querySelector('main');
 const userScore_span = document.getElementById('user-score');
@@ -26,6 +26,10 @@ function removeEventListeners() {
 }
 
 function rock() {
+  rock_div.classList.remove('selected');
+  paper_div.classList.remove('selected');
+  scissors_div.classList.remove('selected');
+  rock_div.classList.add('selected');
   const computerChoice = Math.ceil(Math.random() * 3);
   if (computerChoice === 1) {
     result_div.innerText = "It's a tie.";
@@ -33,22 +37,26 @@ function rock() {
   if (computerChoice === 2) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
-    result_div.innerText = 'Paper covers Rock. You loose.';
+    result_div.innerText = 'Paper covers Rock.\nYou loose.';
   }
   if (computerChoice === 3) {
     userScore++;
     userScore_span.innerHTML = userScore;
-    result_div.innerText = 'Rock crushes Scissors. You win!';
+    result_div.innerText = 'Rock crushes Scissors.\nYou win!';
   }
   endOfGame();
 }
 
 function paper() {
+  rock_div.classList.remove('selected');
+  paper_div.classList.remove('selected');
+  scissors_div.classList.remove('selected');
+  paper_div.classList.add('selected');
   const computerChoice = Math.ceil(Math.random() * 3);
   if (computerChoice === 1) {
     userScore++;
     userScore_span.innerHTML = userScore;
-    result_div.innerText = 'Paper covers Rock. You win!';
+    result_div.innerText = 'Paper covers Rock.\nYou win!';
   }
   if (computerChoice === 2) {
     result_div.innerText = "It's a tie.";
@@ -56,26 +64,31 @@ function paper() {
   if (computerChoice === 3) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
-    result_div.innerText = 'Scissors cut Paper. You loose.';
+    result_div.innerText = 'Scissors cut Paper.\nYou loose.';
   }
   endOfGame();
 }
 
 function scissors() {
-  //todo START: 
+  //todo START:
   // scissors_div.style.backgroundColor = 'green';
-  //todo END 
+  //todo END
+  rock_div.classList.remove('selected');
+  paper_div.classList.remove('selected');
+  scissors_div.classList.remove('selected');
+  scissors_div.classList.add('selected');
+  
   const computerChoice = Math.ceil(Math.random() * 3);
   if (computerChoice === 1) {
     computerScore++;
 
     computerScore_span.innerHTML = computerScore;
-    result_div.innerText = 'Rock crushes Scissors. You loose.';
+    result_div.innerText = 'Rock crushes Scissors.\nYou loose.';
   }
   if (computerChoice === 2) {
     userScore++;
     userScore_span.innerHTML = userScore;
-    result_div.innerText = 'Scissors cut Paper. You win!';
+    result_div.innerText = 'Scissors cut Paper.\nYou win!';
   }
   if (computerChoice === 3) {
     result_div.innerText = "It's a tie.";
@@ -90,16 +103,14 @@ function endOfGame() {
   if (userScore === scoreToWin) {
     removeEventListeners();
     summary.classList.remove('hidden');
-    summaryMessage_p.innerHTML = `All right, you won! &#128516<br>${userScore} : ${computerScore}`;
+    summaryMessage_p.innerHTML = `All right, you won the game!<br>&#128516<br>${userScore} : ${computerScore}`;
     // main.style.backgroundColor='#444444ee'
-  
   }
   if (computerScore === scoreToWin) {
     removeEventListeners();
     summary.classList.remove('hidden');
-    summaryMessage_p.innerHTML = `You lost, hmpf. &#128548<br>${userScore} : ${computerScore}`;
+    summaryMessage_p.innerHTML = `You lost the game.<br>&#128548<br>${userScore} : ${computerScore}`;
     // main.style.backgroundColor='#444e'
-  
   }
 }
 
@@ -113,5 +124,8 @@ reset_btn.onclick = () => {
   computerScore_span.innerHTML = 0;
   result_div.innerText = `Reach ${scoreToWin} points to win.`;
   summary.classList.add('hidden');
+  rock_div.classList.remove('selected');
+  paper_div.classList.remove('selected');
+  scissors_div.classList.remove('selected');
   addEventListeners();
 };
